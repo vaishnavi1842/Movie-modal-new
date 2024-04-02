@@ -1,0 +1,138 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+span{
+   padding: 10px;
+   background-color: yellow;
+   text-align: center;
+   color: black;
+}
+
+body{
+    background-color: #042b5f;
+}
+
+
+.logo{
+	height:120px;
+	display: inline-block;
+}
+
+.logo img{
+	width:100%;
+	object-fit: cover;
+}
+
+.movieCard{
+	height:550px;
+	position: relative;
+	overflow:hidden;
+}
+
+.movieCard img{
+	height:100%;
+	width:100%;
+    object-fit:cover;
+	
+}
+.ratingsection {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(3,37,35);
+    color: white;
+    padding: 1rem;
+}
+
+.overviewsection{
+	position:absolute;
+	top:125%;
+	left:0;
+	width: 100%;
+	padding:20px;
+	height:70%;
+	background-color:white;
+	transition:all .4s ease-in-out;
+	opacity: 0;
+}
+
+.movieCard:hover .overviewsection,
+.movieCard:Active .overviewsection,
+.movieCard:focus .overviewsection{
+	top:30%;
+	opacity: 1;
+}	
+
+
+.ratingsection .title{
+	height: 33px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+.backDrop{
+	position:fixed;
+	height:100vh;
+	width:100%;
+	background-color: rgba(0,0,0,.7);
+	top:0;
+	left:0;
+	display:none;
+		animation: fadeIn .4s ease-in-out ;
+
+}	
+
+.closeMovieModal{
+	cursor:pointer;
+}
+
+.moviemodal.active,
+.backDrop.active{
+	display:block;
+} 
+
+.moviemodal{
+	position:fixed;
+	top:10%; 
+	width:60%;
+	left:20%;
+	display:none;
+	animation: fadeSlideDown .4s ease-in-out ;
+}
+
+
+@keyframes fadeSlideDown{
+	from{
+		transform: translateY(-50%);
+		opacity:0;
+	}
+	to{
+	   transform:translateY(0);
+	   opacity:1;
+	}
+}
+
+@keyframes fadeIn{
+	from{
+		opacity:0;
+	}
+	to{
+	   opacity:1;
+	}
+}
+
+.action{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    right:0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
